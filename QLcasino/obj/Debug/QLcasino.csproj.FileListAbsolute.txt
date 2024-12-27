@@ -1,0 +1,12 @@
+E:\LTWD\QLcasino\QLcasino\bin\Debug\QLcasino.exe.config
+E:\LTWD\QLcasino\QLcasino\bin\Debug\QLcasino.exe
+E:\LTWD\QLcasino\QLcasino\bin\Debug\QLcasino.pdb
+E:\LTWD\QLcasino\QLcasino\obj\Debug\QLcasino.csproj.AssemblyReference.cache
+E:\LTWD\QLcasino\QLcasino\obj\Debug\QLcasino.frm_Login.resources
+E:\LTWD\QLcasino\QLcasino\obj\Debug\QLcasino.Properties.Resources.resources
+E:\LTWD\QLcasino\QLcasino\obj\Debug\QLcasino.csproj.GenerateResource.cache
+E:\LTWD\QLcasino\QLcasino\obj\Debug\QLcasino.csproj.CoreCompileInputs.cache
+E:\LTWD\QLcasino\QLcasino\obj\Debug\QLcasino.exe
+E:\LTWD\QLcasino\QLcasino\obj\Debug\QLcasino.pdb
+E:\LTWD\QLcasino\QLcasino\obj\Debug\QLcasino.formDK.resources
+E:\LTWD\QLcasino\QLcasino\obj\Debug\QLcasino.formTQL.resources
