@@ -1,52 +1,128 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\LTWD\\QLcasino\\",
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|e:\\ltwd\\qlcasino\\qlcasino\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|solutionrelative:qlcasino\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|e:\\ltwd\\qlcasino\\qlcasino\\formdk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|solutionrelative:qlcasino\\formdk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|e:\\ltwd\\qlcasino\\qlcasino\\formdn.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|solutionrelative:qlcasino\\formdn.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|e:\\ltwd\\qlcasino\\qlcasino\\formtql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\qlcasino\\formtql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|solutionrelative:qlcasino\\formtql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|e:\\ltwd\\qlcasino\\qlcasino\\formdn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\qlcasino\\formdn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|solutionrelative:qlcasino\\formdn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\qlcasino\\formdk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|solutionrelative:qlcasino\\formdk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|c:\\users\\admin\\desktop\\qlcasinophuc\\quanlycasino\\qlcasino\\formkhach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|solutionrelative:qlcasino\\formkhach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|c:\\users\\admin\\desktop\\qlcasinophuc\\quanlycasino\\qlcasino\\formkhach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|solutionrelative:qlcasino\\formkhach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|c:\\users\\admin\\desktop\\qlcasinophuc\\quanlycasino\\qlcasino\\formdk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|solutionrelative:qlcasino\\formdk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|c:\\users\\admin\\desktop\\qlcasinophuc\\quanlycasino\\qlcasino\\formdn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|solutionrelative:qlcasino\\formdn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|c:\\users\\admin\\desktop\\qlcasinophuc\\quanlycasino\\qlcasino\\formtql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|solutionrelative:qlcasino\\formtql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\qlcasino\\formdn.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC135B90-09EA-42DB-A0CC-243F1F63266C}|QLcasino\\QLcasino.csproj|solutionrelative:qlcasino\\formdn.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 256,
+      "VerticalTabListWidth": 100,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "formKhach.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\QLcasino\\formKhach.cs",
+              "RelativeDocumentMoniker": "QLcasino\\formKhach.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\QLcasino\\formKhach.cs",
+              "RelativeToolTip": "QLcasino\\formKhach.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAcwEAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-30T04:49:16.158Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
+              "Title": "formKhach.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\QLcasino\\formKhach.cs",
+              "RelativeDocumentMoniker": "QLcasino\\formKhach.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\QLcasino\\formKhach.cs [Design]",
+              "RelativeToolTip": "QLcasino\\formKhach.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-30T04:48:18.608Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "formDK.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\QLcasino\\formDK.cs",
+              "RelativeDocumentMoniker": "QLcasino\\formDK.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\QLcasino\\formDK.cs",
+              "RelativeToolTip": "QLcasino\\formDK.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAkwJwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-30T04:47:11.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "formTQL.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\QLcasino\\formTQL.cs",
+              "RelativeDocumentMoniker": "QLcasino\\formTQL.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\QLcasino\\formTQL.cs",
+              "RelativeToolTip": "QLcasino\\formTQL.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAMwGYAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-30T04:41:49.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "formDN.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\QLcasino\\formDN.cs",
+              "RelativeDocumentMoniker": "QLcasino\\formDN.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\QLcasino\\formDN.cs",
+              "RelativeToolTip": "QLcasino\\formDN.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAkwCcAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-30T04:38:04.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "formDN.Designer.cs",
-              "DocumentMoniker": "E:\\LTWD\\QLcasino\\QLcasino\\formDN.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\QLcasino\\formDN.Designer.cs",
               "RelativeDocumentMoniker": "QLcasino\\formDN.Designer.cs",
-              "ToolTip": "E:\\LTWD\\QLcasino\\QLcasino\\formDN.Designer.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\QLcasino\\formDN.Designer.cs",
               "RelativeToolTip": "QLcasino\\formDN.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -55,24 +131,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\LTWD\\QLcasino\\QLcasino\\Program.cs",
-              "RelativeDocumentMoniker": "QLcasino\\Program.cs",
-              "ToolTip": "E:\\LTWD\\QLcasino\\QLcasino\\Program.cs",
-              "RelativeToolTip": "QLcasino\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T04:13:11.062Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "formDK.cs [Design]",
-              "DocumentMoniker": "E:\\LTWD\\QLcasino\\QLcasino\\formDK.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\QLcasino\\formDK.cs",
               "RelativeDocumentMoniker": "QLcasino\\formDK.cs",
-              "ToolTip": "E:\\LTWD\\QLcasino\\QLcasino\\formDK.cs [Design]",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\QLcasino\\formDK.cs [Design]",
               "RelativeToolTip": "QLcasino\\formDK.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-27T04:09:46.266Z",
@@ -80,11 +143,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "formDN.cs [Design]",
-              "DocumentMoniker": "E:\\LTWD\\QLcasino\\QLcasino\\formDN.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\QLcasino\\formDN.cs",
               "RelativeDocumentMoniker": "QLcasino\\formDN.cs",
-              "ToolTip": "E:\\LTWD\\QLcasino\\QLcasino\\formDN.cs [Design]",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\QLcasino\\formDN.cs [Design]",
               "RelativeToolTip": "QLcasino\\formDN.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-27T03:55:54.815Z",
@@ -92,11 +155,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "formTQL.cs [Design]",
-              "DocumentMoniker": "E:\\LTWD\\QLcasino\\QLcasino\\formTQL.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\QLcasino\\formTQL.cs",
               "RelativeDocumentMoniker": "QLcasino\\formTQL.cs",
-              "ToolTip": "E:\\LTWD\\QLcasino\\QLcasino\\formTQL.cs [Design]",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\QLcasinoPhuc\\QuanLyCasino\\QLcasino\\formTQL.cs [Design]",
               "RelativeToolTip": "QLcasino\\formTQL.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-27T03:51:00.077Z",

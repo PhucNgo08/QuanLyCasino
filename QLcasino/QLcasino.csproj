@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="formKhach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formKhach.Designer.cs">
+      <DependentUpon>formKhach.cs</DependentUpon>
+    </Compile>
     <Compile Include="formTQL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formDN.resx">
       <DependentUpon>formDN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formKhach.resx">
+      <DependentUpon>formKhach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formTQL.resx">
       <DependentUpon>formTQL.cs</DependentUpon>
@@ -103,6 +112,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\20170413125239-1304chautinhtri01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

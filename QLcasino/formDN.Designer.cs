@@ -40,28 +40,32 @@
             // 
             // bnt_DN
             // 
-            this.bnt_DN.Location = new System.Drawing.Point(146, 195);
+            this.bnt_DN.Location = new System.Drawing.Point(195, 240);
+            this.bnt_DN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bnt_DN.Name = "bnt_DN";
-            this.bnt_DN.Size = new System.Drawing.Size(98, 23);
+            this.bnt_DN.Size = new System.Drawing.Size(131, 28);
             this.bnt_DN.TabIndex = 15;
             this.bnt_DN.Text = "Đăng Nhập";
             this.bnt_DN.UseVisualStyleBackColor = true;
+            this.bnt_DN.Click += new System.EventHandler(this.bnt_DN_Click);
             // 
             // lbl_MK
             // 
             this.lbl_MK.AutoSize = true;
-            this.lbl_MK.Location = new System.Drawing.Point(67, 151);
+            this.lbl_MK.Location = new System.Drawing.Point(89, 186);
+            this.lbl_MK.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_MK.Name = "lbl_MK";
-            this.lbl_MK.Size = new System.Drawing.Size(56, 13);
+            this.lbl_MK.Size = new System.Drawing.Size(65, 16);
             this.lbl_MK.TabIndex = 14;
             this.lbl_MK.Text = "Mật Khẩu ";
             // 
             // lbl_TTK
             // 
             this.lbl_TTK.AutoSize = true;
-            this.lbl_TTK.Location = new System.Drawing.Point(67, 89);
+            this.lbl_TTK.Location = new System.Drawing.Point(89, 110);
+            this.lbl_TTK.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_TTK.Name = "lbl_TTK";
-            this.lbl_TTK.Size = new System.Drawing.Size(81, 13);
+            this.lbl_TTK.Size = new System.Drawing.Size(98, 16);
             this.lbl_TTK.TabIndex = 13;
             this.lbl_TTK.Text = "Tên Tài Khoản ";
             // 
@@ -70,24 +74,27 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label1.Location = new System.Drawing.Point(74, 26);
+            this.label1.Location = new System.Drawing.Point(99, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 37);
+            this.label1.Size = new System.Drawing.Size(365, 46);
             this.label1.TabIndex = 12;
             this.label1.Text = " カジノ(Casino) F88";
             // 
             // txt_MK
             // 
-            this.txt_MK.Location = new System.Drawing.Point(182, 144);
+            this.txt_MK.Location = new System.Drawing.Point(243, 177);
+            this.txt_MK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_MK.Name = "txt_MK";
-            this.txt_MK.Size = new System.Drawing.Size(155, 20);
+            this.txt_MK.Size = new System.Drawing.Size(205, 22);
             this.txt_MK.TabIndex = 11;
             // 
             // txt_TTK
             // 
-            this.txt_TTK.Location = new System.Drawing.Point(182, 82);
+            this.txt_TTK.Location = new System.Drawing.Point(243, 101);
+            this.txt_TTK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_TTK.Name = "txt_TTK";
-            this.txt_TTK.Size = new System.Drawing.Size(155, 20);
+            this.txt_TTK.Size = new System.Drawing.Size(205, 22);
             this.txt_TTK.TabIndex = 10;
             // 
             // panel1
@@ -98,21 +105,23 @@
             this.panel1.Controls.Add(this.lbl_MK);
             this.panel1.Controls.Add(this.txt_MK);
             this.panel1.Controls.Add(this.lbl_TTK);
-            this.panel1.Location = new System.Drawing.Point(66, 218);
+            this.panel1.Location = new System.Drawing.Point(88, 268);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(452, 232);
+            this.panel1.Size = new System.Drawing.Size(603, 286);
             this.panel1.TabIndex = 16;
             // 
             // frm_Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QLcasino.Properties.Resources._20170413125239_1304chautinhtri01;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(584, 462);
+            this.ClientSize = new System.Drawing.Size(776, 559);
             this.Controls.Add(this.panel1);
-            this.MaximumSize = new System.Drawing.Size(600, 501);
-            this.MinimumSize = new System.Drawing.Size(600, 501);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(794, 606);
+            this.MinimumSize = new System.Drawing.Size(794, 606);
             this.Name = "frm_Login";
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
