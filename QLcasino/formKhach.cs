@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QLcasino.QLcasinoEntities;
+using System.Data.Entity;   
 
 namespace QLcasino
 {
@@ -20,7 +20,7 @@ namespace QLcasino
         private void Fill_dgv_DSSV()
         {
             // Khởi tạo Entity Framework context (QLcasinoEntities1)
-            using (QLcasinoEntities2 db = new QLcasinoEntities2())
+            using (QLcasinoEntities db = new QLcasinoEntities())
             {
                 // Lấy danh sách khách hàng từ cơ sở dữ liệu
                 var listKhachHang = db.Khachhang.ToList();
@@ -41,7 +41,7 @@ namespace QLcasino
                     dgvKhachhang.Rows[i].Cells[4].Value = khachHang.DiaChi; // Địa chỉ
                     dgvKhachhang.Rows[i].Cells[5].Value = khachHang.QuocTich; // Quốc tịch
                     dgvKhachhang.Rows[i].Cells[6].Value = khachHang.TrangThaiThanhVien; // Trạng thái thành viên
-                    dgvKhachhang.Rows[i].Cells[7].Value = khachHang.MaDV; // Mã dịch vụ
+                    dgvKhachhang.Rows[i].Cells[7].Value = khachHang.Hoadon; // Mã dịch vụ
 
                 }
             }

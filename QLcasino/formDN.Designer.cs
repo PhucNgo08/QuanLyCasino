@@ -35,13 +35,14 @@
             this.txt_MK = new System.Windows.Forms.TextBox();
             this.txt_TTK = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_DK = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bnt_DN
             // 
             this.bnt_DN.Location = new System.Drawing.Point(195, 240);
-            this.bnt_DN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bnt_DN.Margin = new System.Windows.Forms.Padding(4);
             this.bnt_DN.Name = "bnt_DN";
             this.bnt_DN.Size = new System.Drawing.Size(131, 28);
             this.bnt_DN.TabIndex = 15;
@@ -84,7 +85,7 @@
             // txt_MK
             // 
             this.txt_MK.Location = new System.Drawing.Point(243, 177);
-            this.txt_MK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_MK.Margin = new System.Windows.Forms.Padding(4);
             this.txt_MK.Name = "txt_MK";
             this.txt_MK.Size = new System.Drawing.Size(205, 22);
             this.txt_MK.TabIndex = 11;
@@ -92,13 +93,14 @@
             // txt_TTK
             // 
             this.txt_TTK.Location = new System.Drawing.Point(243, 101);
-            this.txt_TTK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_TTK.Margin = new System.Windows.Forms.Padding(4);
             this.txt_TTK.Name = "txt_TTK";
             this.txt_TTK.Size = new System.Drawing.Size(205, 22);
             this.txt_TTK.TabIndex = 10;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_DK);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.bnt_DN);
             this.panel1.Controls.Add(this.txt_TTK);
@@ -106,10 +108,21 @@
             this.panel1.Controls.Add(this.txt_MK);
             this.panel1.Controls.Add(this.lbl_TTK);
             this.panel1.Location = new System.Drawing.Point(88, 268);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(603, 286);
             this.panel1.TabIndex = 16;
+            // 
+            // btn_DK
+            // 
+            this.btn_DK.Location = new System.Drawing.Point(358, 240);
+            this.btn_DK.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_DK.Name = "btn_DK";
+            this.btn_DK.Size = new System.Drawing.Size(131, 28);
+            this.btn_DK.TabIndex = 17;
+            this.btn_DK.Text = "Đăng kí";
+            this.btn_DK.UseVisualStyleBackColor = true;
+            this.btn_DK.Click += new System.EventHandler(this.btn_DK_Click);
             // 
             // frm_Login
             // 
@@ -119,7 +132,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(776, 559);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(794, 606);
             this.MinimumSize = new System.Drawing.Size(794, 606);
             this.Name = "frm_Login";
@@ -139,5 +152,6 @@
         private System.Windows.Forms.TextBox txt_MK;
         private System.Windows.Forms.TextBox txt_TTK;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_DK;
     }
 }
