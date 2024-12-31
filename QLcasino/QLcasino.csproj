@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,11 +55,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BanChoi.cs">
+      <DependentUpon>QlcasinoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BanChoiNguoi.cs">
+      <DependentUpon>QlcasinoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DanhThu.cs">
+      <DependentUpon>QlcasinoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DichVu.cs">
+      <DependentUpon>QlcasinoEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="formKhach.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formKhach.Designer.cs">
       <DependentUpon>formKhach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formKhuyenMai.Designer.cs">
+      <DependentUpon>formKhuyenMai.cs</DependentUpon>
     </Compile>
     <Compile Include="formTQL.cs">
       <SubType>Form</SubType>
@@ -70,8 +97,56 @@
     <Compile Include="formDK.Designer.cs">
       <DependentUpon>formDK.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hoadon.cs">
+      <DependentUpon>QlcasinoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Khachhang.cs">
+      <DependentUpon>QlcasinoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KhieuNai.cs">
+      <DependentUpon>QlcasinoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KhuVuc.cs">
+      <DependentUpon>QlcasinoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KhuyenMai.cs">
+      <DependentUpon>QlcasinoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LichLamViec.cs">
+      <DependentUpon>QlcasinoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LichSuChoi.cs">
+      <DependentUpon>QlcasinoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.cs">
+      <DependentUpon>QlcasinoEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QlcasinoEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QlcasinoEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QlcasinoEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QlcasinoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QlcasinoEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QlcasinoEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="TaiKhoanNV.cs">
+      <DependentUpon>QlcasinoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKeDoanhThu.cs">
+      <DependentUpon>QlcasinoEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TroChoi.cs">
+      <DependentUpon>QlcasinoEntity.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="formDK.resx">
       <DependentUpon>formDK.cs</DependentUpon>
     </EmbeddedResource>
@@ -80,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formKhach.resx">
       <DependentUpon>formKhach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formKhuyenMai.resx">
+      <DependentUpon>formKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formTQL.resx">
       <DependentUpon>formTQL.cs</DependentUpon>
@@ -94,6 +172,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -105,16 +185,32 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <EntityDeploy Include="QlcasinoEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QlcasinoEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QlcasinoEntity.edmx.diagram">
+      <DependentUpon>QlcasinoEntity.edmx</DependentUpon>
+    </None>
     <None Include="Resources\z6170650220340_1b7357d9c10310f6bfcf3343a2a350a1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\20170413125239-1304chautinhtri01.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="NewFolder1\" />
+    <Content Include="QlcasinoEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QlcasinoEntity.edmx</DependentUpon>
+      <LastGenOutput>QlcasinoEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="QlcasinoEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QlcasinoEntity.edmx</DependentUpon>
+      <LastGenOutput>QlcasinoEntity.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

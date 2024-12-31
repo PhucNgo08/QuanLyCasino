@@ -37,9 +37,9 @@ namespace QLcasino
                         try
                         {
                             // Sử dụng Entity Framework để truy vấn cơ sở dữ liệu
-                            using (QLcasinoEntities2 db = new QLcasinoEntities2())
+                            using (QLcasinoEntities db = new QLcasinoEntities())
                             {
-                                var taiKhoanTonTai = db.TaiKhoans
+                                var taiKhoanTonTai = db.TaiKhoanNV
                                             .FirstOrDefault(tk => tk.TenTaiKhoan == tenTaiKhoan && tk.MatKhau == matKhau);
 
 
@@ -77,6 +77,13 @@ namespace QLcasino
 
                 }
             }
+        }
+
+        private void btn_DK_Click(object sender, EventArgs e)
+        {
+
+            formDK formDangKy = new formDK();  // Tạo đối tượng form đăng ký
+            formDangKy.Show();  // Mở form đăng ký
         }
     }
 }
