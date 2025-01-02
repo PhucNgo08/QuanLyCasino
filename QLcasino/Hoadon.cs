@@ -21,13 +21,13 @@ namespace QLcasino
         }
     
         public int MaHoadon { get; set; }
+        public Nullable<int> MaTrangThai { get; set; }
         public string LoaiGiaoDich { get; set; }
         public Nullable<System.DateTime> NgayGiaoDich { get; set; }
         public Nullable<decimal> SoTien { get; set; }
         public Nullable<int> MaKhachhang { get; set; }
         public Nullable<int> MaDV { get; set; }
         public Nullable<int> MaKM { get; set; }
-        public string TrangThaiHoadon { get; set; }
         public Nullable<System.DateTime> NgayThanhToan { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -35,5 +35,6 @@ namespace QLcasino
         public virtual DichVu DichVu { get; set; }
         public virtual Khachhang Khachhang { get; set; }
         public virtual KhuyenMai KhuyenMai { get; set; }
+        public virtual TrangThai TrangThai { get; set; }
     }
 }

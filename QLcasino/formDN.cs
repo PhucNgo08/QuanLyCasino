@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
+using System.Runtime.Remoting.Contexts;
 
 namespace QLcasino
 {
@@ -16,74 +18,50 @@ namespace QLcasino
         {
             InitializeComponent();
         }
-
         private void bnt_DN_Click(object sender, EventArgs e)
         {
+            // Lấy giá trị từ TextBox
+            string tenTaiKhoan = txt_TTK.Text.Trim();
+            string matKhau = txt_MK.Text.Trim();
 
+            using (var db = new QLcasinoEntities2())
             {
+                var taiKhoanTonTai = db.TaiKhoanNV
+                    .FirstOrDefault(tk => tk.TenTaiKhoan == tenTaiKhoan);
+
+                if (taiKhoanTonTai != null)
                 {
+                    // So sánh mật khẩu dạng chuỗi
+                    if (taiKhoanTonTai.MatKhau == matKhau)
                     {
-                        // Lấy thông tin từ giao diện
-                        string tenTaiKhoan = txt_TTK.Text.Trim();
-                        string matKhau = txt_MK.Text.Trim();
-
-                        // Kiểm tra thông tin nhập
-                        if (string.IsNullOrWhiteSpace(tenTaiKhoan) || string.IsNullOrWhiteSpace(matKhau))
+                        // Kiểm tra loại tài khoản
+                        if (taiKhoanTonTai.LoaiTaiKhoan == "Admin")
                         {
-                            MessageBox.Show("Tên tài khoản và mật khẩu không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return;
+                            MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            formTQL formTQL = new formTQL();
+                            formTQL.FormClosed += (s, args) => this.Close();
+                            formTQL.Show();
+
+                            this.Hide();
                         }
-
-                        try
+                        else
                         {
-                            // Sử dụng Entity Framework để truy vấn cơ sở dữ liệu
-                            using (QLcasinoEntities db = new QLcasinoEntities())
-                            {
-                                var taiKhoanTonTai = db.TaiKhoanNV
-                                            .FirstOrDefault(tk => tk.TenTaiKhoan == tenTaiKhoan && tk.MatKhau == matKhau);
-
-
-                                if (taiKhoanTonTai != null)
-                                {
-                                    MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                    // Phân loại tài khoản
-                                    if (taiKhoanTonTai.LoaiTaiKhoan == "Admin")
-                                    {
-                                        // Mở form quản lý (Admin)
-                                        formTQL formQuanLy = new formTQL();
-                                        formQuanLy.Show();
-                                    }
-                                    else
-                                    {
-                                        // Mở form khách (User)
-
-                                    }
-
-                                    // Ẩn form đăng nhập
-                                    this.Hide();
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Tên tài khoản hoặc mật khẩu không đúng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Bạn không có quyền truy cập vào chức năng này!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
-
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Tài khoản không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        private void btn_DK_Click(object sender, EventArgs e)
+        private void frm_Login_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-            formDK formDangKy = new formDK();  // Tạo đối tượng form đăng ký
-            formDangKy.Show();  // Mở form đăng ký
         }
     }
 }

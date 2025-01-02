@@ -24,7 +24,9 @@ namespace QLcasino
         public string TenDV { get; set; }
         public string LoaiDV { get; set; }
         public Nullable<decimal> GiaDV { get; set; }
+        public Nullable<int> MaTrangThai { get; set; }
     
+        public virtual TrangThai TrangThai { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Hoadon> Hoadon { get; set; }
     }

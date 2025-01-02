@@ -26,12 +26,13 @@ namespace QLcasino
         public Nullable<int> MaKV { get; set; }
         public string LoaiChoi { get; set; }
         public Nullable<int> SoNguoi { get; set; }
-        public string TrangThai { get; set; }
+        public Nullable<int> MaTrangThai { get; set; }
     
         public virtual KhuVuc KhuVuc { get; set; }
         public virtual TroChoi TroChoi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BanChoiNguoi> BanChoiNguoi { get; set; }
+        public virtual TrangThai TrangThai { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LichSuChoi> LichSuChoi { get; set; }
     }

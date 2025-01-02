@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLcasinoModelStoreContainer" CdmEntityContainer="QLcasinoEntities2">
+    <EntitySetMapping Name="BanChoi">
+      <EntityTypeMapping TypeName="QLcasinoModel.BanChoi">
+        <MappingFragment StoreEntitySet="BanChoi">
+          <ScalarProperty Name="MaBC" ColumnName="MaBC" />
+          <ScalarProperty Name="MaTC" ColumnName="MaTC" />
+          <ScalarProperty Name="MaKV" ColumnName="MaKV" />
+          <ScalarProperty Name="LoaiChoi" ColumnName="LoaiChoi" />
+          <ScalarProperty Name="SoNguoi" ColumnName="SoNguoi" />
+          <ScalarProperty Name="MaTrangThai" ColumnName="MaTrangThai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BanChoiNguoi">
+      <EntityTypeMapping TypeName="QLcasinoModel.BanChoiNguoi">
+        <MappingFragment StoreEntitySet="BanChoiNguoi">
+          <ScalarProperty Name="MaBC" ColumnName="MaBC" />
+          <ScalarProperty Name="MaTrangThai" ColumnName="MaTrangThai" />
+          <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
+          <ScalarProperty Name="ThoiGianVao" ColumnName="ThoiGianVao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhThu">
+      <EntityTypeMapping TypeName="QLcasinoModel.DanhThu">
+        <MappingFragment StoreEntitySet="DanhThu">
+          <ScalarProperty Name="MaDanhThu" ColumnName="MaDanhThu" />
+          <ScalarProperty Name="MaHoadon" ColumnName="MaHoadon" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="NgayThu" ColumnName="NgayThu" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DichVu">
+      <EntityTypeMapping TypeName="QLcasinoModel.DichVu">
+        <MappingFragment StoreEntitySet="DichVu">
+          <ScalarProperty Name="MaDV" ColumnName="MaDV" />
+          <ScalarProperty Name="TenDV" ColumnName="TenDV" />
+          <ScalarProperty Name="LoaiDV" ColumnName="LoaiDV" />
+          <ScalarProperty Name="GiaDV" ColumnName="GiaDV" />
+          <ScalarProperty Name="MaTrangThai" ColumnName="MaTrangThai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hoadon">
+      <EntityTypeMapping TypeName="QLcasinoModel.Hoadon">
+        <MappingFragment StoreEntitySet="Hoadon">
+          <ScalarProperty Name="MaHoadon" ColumnName="MaHoadon" />
+          <ScalarProperty Name="MaTrangThai" ColumnName="MaTrangThai" />
+          <ScalarProperty Name="LoaiGiaoDich" ColumnName="LoaiGiaoDich" />
+          <ScalarProperty Name="NgayGiaoDich" ColumnName="NgayGiaoDich" />
+          <ScalarProperty Name="SoTien" ColumnName="SoTien" />
+          <ScalarProperty Name="MaKhachhang" ColumnName="MaKhachhang" />
+          <ScalarProperty Name="MaDV" ColumnName="MaDV" />
+          <ScalarProperty Name="MaKM" ColumnName="MaKM" />
+          <ScalarProperty Name="NgayThanhToan" ColumnName="NgayThanhToan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Khachhang">
+      <EntityTypeMapping TypeName="QLcasinoModel.Khachhang">
+        <MappingFragment StoreEntitySet="Khachhang">
+          <ScalarProperty Name="MaKhachhang" ColumnName="MaKhachhang" />
+          <ScalarProperty Name="MaTrangThai" ColumnName="MaTrangThai" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="SoCMND_CCCD" ColumnName="SoCMND_CCCD" />
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="QuocTich" ColumnName="QuocTich" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhieuNai">
+      <EntityTypeMapping TypeName="QLcasinoModel.KhieuNai">
+        <MappingFragment StoreEntitySet="KhieuNai">
+          <ScalarProperty Name="MaKN" ColumnName="MaKN" />
+          <ScalarProperty Name="MaTrangThai" ColumnName="MaTrangThai" />
+          <ScalarProperty Name="LyDo" ColumnName="LyDo" />
+          <ScalarProperty Name="MaKhachhang" ColumnName="MaKhachhang" />
+          <ScalarProperty Name="NgayNhan" ColumnName="NgayNhan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhuVuc">
+      <EntityTypeMapping TypeName="QLcasinoModel.KhuVuc">
+        <MappingFragment StoreEntitySet="KhuVuc">
+          <ScalarProperty Name="MaKV" ColumnName="MaKV" />
+          <ScalarProperty Name="TenKV" ColumnName="TenKV" />
+          <ScalarProperty Name="LoaiKV" ColumnName="LoaiKV" />
+          <ScalarProperty Name="SucChua" ColumnName="SucChua" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhuyenMai">
+      <EntityTypeMapping TypeName="QLcasinoModel.KhuyenMai">
+        <MappingFragment StoreEntitySet="KhuyenMai">
+          <ScalarProperty Name="MaKM" ColumnName="MaKM" />
+          <ScalarProperty Name="TenKM" ColumnName="TenKM" />
+          <ScalarProperty Name="PhanTramKM" ColumnName="PhanTramKM" />
+          <ScalarProperty Name="NgayBatDau" ColumnName="NgayBatDau" />
+          <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LichLamViec">
+      <EntityTypeMapping TypeName="QLcasinoModel.LichLamViec">
+        <MappingFragment StoreEntitySet="LichLamViec">
+          <ScalarProperty Name="MaLichLam" ColumnName="MaLichLam" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="Ngay" ColumnName="Ngay" />
+          <ScalarProperty Name="CaLam" ColumnName="CaLam" />
+          <ScalarProperty Name="MaKhuVuc" ColumnName="MaKhuVuc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LichSuChoi">
+      <EntityTypeMapping TypeName="QLcasinoModel.LichSuChoi">
+        <MappingFragment StoreEntitySet="LichSuChoi">
+          <ScalarProperty Name="MaLC" ColumnName="MaLC" />
+          <ScalarProperty Name="MaTrangThai" ColumnName="MaTrangThai" />
+          <ScalarProperty Name="TGChoi" ColumnName="TGChoi" />
+          <ScalarProperty Name="SoTienCuoc" ColumnName="SoTienCuoc" />
+          <ScalarProperty Name="MaKhachhang" ColumnName="MaKhachhang" />
+          <ScalarProperty Name="MaTC" ColumnName="MaTC" />
+          <ScalarProperty Name="MaBC" ColumnName="MaBC" />
+          <ScalarProperty Name="ThoiGianBatDau" ColumnName="ThoiGianBatDau" />
+          <ScalarProperty Name="ThoiGianKetThuc" ColumnName="ThoiGianKetThuc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanVien">
+      <EntityTypeMapping TypeName="QLcasinoModel.NhanVien">
+        <MappingFragment StoreEntitySet="NhanVien">
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="HoTenNV" ColumnName="HoTenNV" />
+          <ScalarProperty Name="ViTriCV" ColumnName="ViTriCV" />
+          <ScalarProperty Name="NgayBDLV" ColumnName="NgayBDLV" />
+          <ScalarProperty Name="CaLV" ColumnName="CaLV" />
+          <ScalarProperty Name="Luong" ColumnName="Luong" />
+          <ScalarProperty Name="MaTrangThai" ColumnName="MaTrangThai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="QLcasinoModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaiKhoanNV">
+      <EntityTypeMapping TypeName="QLcasinoModel.TaiKhoanNV">
+        <MappingFragment StoreEntitySet="TaiKhoanNV">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="TenTaiKhoan" ColumnName="TenTaiKhoan" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="LoaiTaiKhoan" ColumnName="LoaiTaiKhoan" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThongKeDoanhThu">
+      <EntityTypeMapping TypeName="QLcasinoModel.ThongKeDoanhThu">
+        <MappingFragment StoreEntitySet="ThongKeDoanhThu">
+          <ScalarProperty Name="MaThongKe" ColumnName="MaThongKe" />
+          <ScalarProperty Name="MaKhuVuc" ColumnName="MaKhuVuc" />
+          <ScalarProperty Name="MaTroChoi" ColumnName="MaTroChoi" />
+          <ScalarProperty Name="Ngay" ColumnName="Ngay" />
+          <ScalarProperty Name="TongDoanhThu" ColumnName="TongDoanhThu" />
+          <ScalarProperty Name="Thang" ColumnName="Thang" />
+          <ScalarProperty Name="Nam" ColumnName="Nam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrangThai">
+      <EntityTypeMapping TypeName="QLcasinoModel.TrangThai">
+        <MappingFragment StoreEntitySet="TrangThai">
+          <ScalarProperty Name="MaTrangThai" ColumnName="MaTrangThai" />
+          <ScalarProperty Name="TenTrangThai" ColumnName="TenTrangThai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TroChoi">
+      <EntityTypeMapping TypeName="QLcasinoModel.TroChoi">
+        <MappingFragment StoreEntitySet="TroChoi">
+          <ScalarProperty Name="MaTC" ColumnName="MaTC" />
+          <ScalarProperty Name="TenTC" ColumnName="TenTC" />
+          <ScalarProperty Name="LoaiTC" ColumnName="LoaiTC" />
+          <ScalarProperty Name="LuatChoi" ColumnName="LuatChoi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

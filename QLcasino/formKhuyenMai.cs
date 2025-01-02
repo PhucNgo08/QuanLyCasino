@@ -94,6 +94,7 @@ namespace QLcasino
                 }
             }
         }
+
         private void AddKhuyenMai()
         {
             string tenKM = txt_makm.Text;
@@ -263,6 +264,11 @@ namespace QLcasino
 
 
         private void dgvkm_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_them_Click_1(object sender, EventArgs e)
         {
 
         }

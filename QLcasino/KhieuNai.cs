@@ -15,11 +15,12 @@ namespace QLcasino
     public partial class KhieuNai
     {
         public int MaKN { get; set; }
+        public Nullable<int> MaTrangThai { get; set; }
         public string LyDo { get; set; }
         public Nullable<int> MaKhachhang { get; set; }
-        public string TrangThai { get; set; }
         public Nullable<System.DateTime> NgayNhan { get; set; }
     
         public virtual Khachhang Khachhang { get; set; }
+        public virtual TrangThai TrangThai { get; set; }
     }
 }

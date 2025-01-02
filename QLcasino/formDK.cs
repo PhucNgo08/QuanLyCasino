@@ -16,27 +16,15 @@ namespace QLcasino
 {
     public partial class formDK : Form
     {
+  
+
         public formDK()
         {
             InitializeComponent();
         }
 
-        // Kiểm tra email có đúng định dạng gmail.com
 
-        // Mã hóa mật khẩu (SHA-256)
-        private string HashPassword(string password)
-        {
-            using (SHA256 sha256Hash = SHA256.Create())
-            {
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    builder.Append(bytes[i].ToString("x2"));
-                }
-                return builder.ToString();
-            }
-        }
+
 
         // Sự kiện khi người dùng bấm nút Đăng Ký
         private void bnt_DK_Click(object sender, EventArgs e)
@@ -84,13 +72,7 @@ namespace QLcasino
                 return;
             }
 
-            // Kiểm tra Nhập Lại Mật Khẩu
-            if (txt_MK.Text != txt_NLMK.Text)  // Sửa điều kiện này từ txt_NLMK.Text != txt_NLMK.Text thành txt_MK.Text != txt_NLMK.Text
-            {
-                MessageBox.Show("Mật khẩu và mật khẩu nhập lại không khớp!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txt_NLMK.Focus();
-                return;
-            }
+
 
             // Kiểm tra độ mạnh của mật khẩu
             if (!IsStrongPassword(txt_MK.Text))
@@ -104,7 +86,6 @@ namespace QLcasino
             MessageBox.Show("Đăng ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close(); // Đóng form đăng ký
         }
-
         private bool IsPhoneNumber(string phoneNumber)
         {
             return System.Text.RegularExpressions.Regex.IsMatch(phoneNumber, @"^\d{9,11}$");
@@ -151,6 +132,46 @@ namespace QLcasino
                 feedback.Add("Ít nhất 1 ký tự đặc biệt (@, $, !, %, *, ?, &).");
 
             return string.Join("\n", feedback);
+        }
+
+        private void txt_SDT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Hoten_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Email_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_TK_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_MK_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        
+        private void bntBack_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void formDK_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+
+            // Hiển thị form TQL
+            Application.OpenForms["formTQL"].Show();
+            
         }
     }
 }

@@ -15,17 +15,18 @@ namespace QLcasino
     public partial class LichSuChoi
     {
         public int MaLC { get; set; }
+        public Nullable<int> MaTrangThai { get; set; }
         public Nullable<System.TimeSpan> TGChoi { get; set; }
         public Nullable<decimal> SoTienCuoc { get; set; }
         public Nullable<int> MaKhachhang { get; set; }
         public Nullable<int> MaTC { get; set; }
         public Nullable<int> MaBC { get; set; }
-        public string TrangThai { get; set; }
         public Nullable<System.DateTime> ThoiGianBatDau { get; set; }
         public Nullable<System.DateTime> ThoiGianKetThuc { get; set; }
     
         public virtual BanChoi BanChoi { get; set; }
         public virtual Khachhang Khachhang { get; set; }
+        public virtual TrangThai TrangThai { get; set; }
         public virtual TroChoi TroChoi { get; set; }
     }
 }

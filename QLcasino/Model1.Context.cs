@@ -13,10 +13,10 @@ namespace QLcasino
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QLcasinoEntities : DbContext
+    public partial class QLcasinoEntities2 : DbContext
     {
-        public QLcasinoEntities()
-            : base("name=QLcasinoEntities")
+        public QLcasinoEntities2()
+            : base("name=QLcasinoEntities2")
         {
         }
     
@@ -37,8 +37,10 @@ namespace QLcasino
         public virtual DbSet<LichLamViec> LichLamViec { get; set; }
         public virtual DbSet<LichSuChoi> LichSuChoi { get; set; }
         public virtual DbSet<NhanVien> NhanVien { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TaiKhoanNV> TaiKhoanNV { get; set; }
         public virtual DbSet<ThongKeDoanhThu> ThongKeDoanhThu { get; set; }
+        public virtual DbSet<TrangThai> TrangThai { get; set; }
         public virtual DbSet<TroChoi> TroChoi { get; set; }
     }
 }

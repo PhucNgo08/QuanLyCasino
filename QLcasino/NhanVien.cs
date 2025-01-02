@@ -29,7 +29,7 @@ namespace QLcasino
         public Nullable<System.DateTime> NgayBDLV { get; set; }
         public string CaLV { get; set; }
         public Nullable<decimal> Luong { get; set; }
-        public string TrangThaiTaiKhoan { get; set; }
+        public Nullable<int> MaTrangThai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DanhThu> DanhThu { get; set; }
@@ -37,6 +37,7 @@ namespace QLcasino
         public virtual ICollection<KhuVuc> KhuVuc { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LichLamViec> LichLamViec { get; set; }
+        public virtual TrangThai TrangThai { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TaiKhoanNV> TaiKhoanNV { get; set; }
     }
