@@ -16,7 +16,8 @@ namespace QLcasino
 {
     public partial class formDK : Form
     {
-  
+        public string MaNguoiChoi { get; set; }
+        public string MaKhuyenMai { get; set; }
 
         public formDK()
         {
@@ -171,7 +172,34 @@ namespace QLcasino
 
             // Hiển thị form TQL
             Application.OpenForms["formTQL"].Show();
-            
+    
         }
+
+        private void btn_lay_Click(object sender, EventArgs e)
+        {
+        {
+            if (dgvNV.CurrentRow != null) // Kiểm tra xem có dòng nào được chọn không
+            {
+                try
+                {
+                    // Lấy dữ liệu từ các cột trong dòng được chọn
+                    string maKhuyenMai = dgvNV.CurrentRow.Cells["MaKhuyenMai"].Value?.ToString();
+                    string maNguoiChoi = dgvNV.CurrentRow.Cells["MaNguoiChoi"].Value?.ToString();
+
+                    // Hiển thị giá trị hoặc sử dụng trong logic của bạn
+                    MessageBox.Show($"Mã Khuyến Mãi: {maKhuyenMai}\nMã Người Chơi: {maNguoiChoi}");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi lấy dữ liệu từ DataGridView: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một dòng trong bảng.");
+            }
+        }
+
     }
+}
 }

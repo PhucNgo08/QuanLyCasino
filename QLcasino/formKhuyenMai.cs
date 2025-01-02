@@ -13,185 +13,231 @@ namespace QLcasino
 {
     public partial class formKhuyenMai : Form
     {
-        private static formTQL formTQLInstance;
-        private string connectionString = "YourConnectionStringHere"; // Định nghĩa chuỗi kết nối đến cơ sở dữ liệu của bạn ở đây
+        private QLcasinoEntiy dbContext = new QLcasinoEntiy(); // Thay tên context theo EF của bạn
+        private formTQL formTQLInstance = null; // Đảm bảo instance của formTQL
+
         public formKhuyenMai()
         {
             InitializeComponent();
+           
+            LoadKhuyenMai();
 
         }
+
         private bool IsValidDate(string dateString)
         {
             DateTime tempDate;
             return DateTime.TryParse(dateString, out tempDate);
         }
-        private void btn_them_Click(object sender, EventArgs e)
- 
-        {
-            // Kiểm tra dữ liệu đầu vào
-            string tenNguoiChoi = txt_tennc.Text;
-            string phanTramKhuyenMaiText = txt_ptkm.Text; // Lấy giá trị phần trăm khuyến mãi
 
+
+            private bool ValidateInputs(out DateTime ngayBatDau, out DateTime ngayKetThuc, out decimal phanTramKM)
+            {
+                ngayBatDau = DateTime.MinValue;
+                ngayKetThuc = DateTime.MinValue;
+                phanTramKM = 0;
+
+                if (string.IsNullOrEmpty(txt_tennc.Text) || string.IsNullOrEmpty(txt_mnc.Text) ||
+                    string.IsNullOrEmpty(txt_makm.Text) || string.IsNullOrEmpty(txt_ptkm.Text))
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
+                    return false;
+                }
+
+                // Kiểm tra mã người chơi phải là số
+                if (!int.TryParse(txt_mnc.Text, out _))
+                {
+                    MessageBox.Show("Mã người chơi phải là một số.");
+                    return false;
+                }
+
+                if (!DateTime.TryParse(dtp_nbd.Text, out ngayBatDau) || !DateTime.TryParse(dtb_nkt.Text, out ngayKetThuc))
+                {
+                    MessageBox.Show("Ngày bắt đầu hoặc ngày kết thúc không hợp lệ.");
+                    return false;
+                }
+
+                if (!decimal.TryParse(txt_ptkm.Text, out phanTramKM) || phanTramKM <= 0)
+                {
+                    MessageBox.Show("Phần trăm khuyến mãi không hợp lệ.");
+                    return false;
+                }
+
+                return true;
+            }
+
+            private void ClearInputFields()
+            {
+                txt_tennc.Clear();
+                txt_mnc.Clear();
+                txt_makm.Clear();
+                txt_ptkm.Clear();
+                dtp_nbd.Value = DateTime.Now;
+                dtb_nkt.Value = DateTime.Now;
+            }
+
+        private void btn_them_Click(object sender, EventArgs e)
+        {
+            if (!ValidateInputs(out DateTime ngayBatDau, out DateTime ngayKetThuc, out decimal phanTramKM))
+                return;
+
+            string tenNguoiChoi = txt_tennc.Text;
             string maNguoiChoi = txt_mnc.Text;
             string tenKhuyenMai = txt_makm.Text;
-            string ngayBatDau = dtp_nbd.Text;
-            string ngayKetThuc = dtb_nkt.Text;
-           
-            if (string.IsNullOrEmpty(tenNguoiChoi) || string.IsNullOrEmpty(maNguoiChoi) ||
-                string.IsNullOrEmpty(tenKhuyenMai) || string.IsNullOrEmpty(ngayBatDau) || string.IsNullOrEmpty(ngayKetThuc) ||
-                string.IsNullOrEmpty(phanTramKhuyenMaiText)) // Kiểm tra phần trăm khuyến mãi
-            {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
-                return;
-            }
+            string maKhuyenMai = txt_makm.Text;  // Mã khuyến mãi sau tên khuyến mãi
 
-            if (!IsValidDate(ngayBatDau) || !IsValidDate(ngayKetThuc))
-            {
-                MessageBox.Show("Ngày bắt đầu hoặc ngày kết thúc không hợp lệ.");
-                return;
-            }
+            // Thêm dữ liệu vào DataGridView (mã khuyến mãi sẽ được thêm vào sau tên khuyến mãi)
+            dgvkm.Rows.Add(tenNguoiChoi, maNguoiChoi, tenKhuyenMai, maKhuyenMai, ngayBatDau, ngayKetThuc, phanTramKM);
 
-            // Kiểm tra phần trăm khuyến mãi có phải là số hợp lệ hay không
-            decimal phanTramKhuyenMai;
-            if (!decimal.TryParse(phanTramKhuyenMaiText, out phanTramKhuyenMai) || phanTramKhuyenMai <= 0)
-            {
-                MessageBox.Show("Phần trăm khuyến mãi không hợp lệ.");
-                return;
-            }
-
-            // Thêm dữ liệu vào DataGridView
-            dgvkm.Rows.Add(tenNguoiChoi, maNguoiChoi, tenKhuyenMai, ngayBatDau, ngayKetThuc, phanTramKhuyenMai);
+            // Sau khi thêm, làm sạch các trường
+            ClearInputFields();
         }
+
 
         private void LoadKhuyenMai()
         {
-            string query = "SELECT MaKM, TenKM, PhanTramKM, NgayBatDau, NgayKetThuc FROM KhuyenMai";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            try
             {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conn);
-                DataTable dt = new DataTable();
+                // Lấy danh sách Khuyến Mãi từ cơ sở dữ liệu thông qua Entity Framework và sắp xếp theo thứ tự
+                var khuyenMais = dbContext.KhuyenMai
+                                           .Select(km => new
+                                           {
+                                               km.TenKM,           // Tên khuyến mãi
+                                               km.MaKM,            // Mã khuyến mãi
+                                               km.NgayBatDau,      // Ngày bắt đầu
+                                               km.NgayKetThuc,     // Ngày kết thúc
+                                               km.PhanTramKM,      // Phần trăm khuyến mãi
+                                           })
+                                           .OrderBy(km => km.TenKM)          // Sắp xếp theo tên khuyến mãi
+                                           .ThenBy(km => km.MaKM)           // Sau đó sắp xếp theo mã khuyến mãi
+                                           .ThenBy(km => km.NgayKetThuc)    // Sắp xếp theo ngày kết thúc
+                                           .ThenBy(km => km.NgayBatDau)     // Sắp xếp theo ngày bắt đầu
+                                           .ThenBy(km => km.PhanTramKM)     // Sắp xếp theo phần trăm khuyến mãi
+                                           .ToList();
 
-                try
-                {
-                    conn.Open();
-                    dataAdapter.Fill(dt);
-                    dgvkm.Rows.Clear();  // Xóa dữ liệu cũ trong DataGridView
+                dgvkm.Rows.Clear(); // Xóa dữ liệu cũ trong DataGridView
 
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        int rowIndex = dgvkm.Rows.Add();
-                        dgvkm.Rows[rowIndex].Cells[0].Value = row["MaKM"];
-                        dgvkm.Rows[rowIndex].Cells[1].Value = row["TenKM"];
-                        dgvkm.Rows[rowIndex].Cells[2].Value = row["PhanTramKM"];
-                        dgvkm.Rows[rowIndex].Cells[3].Value = row["NgayBatDau"];
-                        dgvkm.Rows[rowIndex].Cells[4].Value = row["NgayKetThuc"];
-                    }
-                }
-                catch (Exception ex)
+                // Duyệt qua danh sách và thêm dữ liệu vào DataGridView
+                foreach (var km in khuyenMais)
                 {
-                    MessageBox.Show("Lỗi khi tải dữ liệu khuyến mãi: " + ex.Message);
+                    // Thêm một dòng mới vào DataGridView
+                    int rowIndex = dgvkm.Rows.Add();
+                    dgvkm.Rows[rowIndex].Cells[0].Value = ""; // Cột trống ở vị trí đầu tiên
+                    dgvkm.Rows[rowIndex].Cells[1].Value = ""; // Cột trống ở vị trí 1
+
+                    // Điền dữ liệu cho các cột còn lại
+                    dgvkm.Rows[rowIndex].Cells[2].Value = km.TenKM;          // Tên khuyến mãi
+                    dgvkm.Rows[rowIndex].Cells[3].Value = km.MaKM;           // Mã khuyến mãi
+                    dgvkm.Rows[rowIndex].Cells[4].Value = km.NgayBatDau;     // Ngày bắt đầu
+                    dgvkm.Rows[rowIndex].Cells[5].Value = km.NgayKetThuc;    // Ngày kết thúc
+                    dgvkm.Rows[rowIndex].Cells[6].Value = km.PhanTramKM;     // Phần trăm khuyến mãi
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu khuyến mãi: " + ex.Message);
             }
         }
 
+
+
+        // Thêm khuyến mãi vào cơ sở dữ liệu
         private void AddKhuyenMai()
         {
-            string tenKM = txt_makm.Text;
-            decimal phanTramKM = decimal.Parse(txt_ptkm.Text);
-            DateTime ngayBatDau = dtp_nbd.Value;
-            DateTime ngayKetThuc = dtb_nkt.Value;
+            string tenKM = txt_makm.Text;  // Mã khuyến mãi
+            decimal phanTramKM = decimal.Parse(txt_ptkm.Text); // Phần trăm khuyến mãi
+            DateTime ngayBatDau = dtp_nbd.Value;  // Ngày bắt đầu
+            DateTime ngayKetThuc = dtb_nkt.Value; // Ngày kết thúc
 
-            string query = "INSERT INTO KhuyenMai (TenKM, PhanTramKM, NgayBatDau, NgayKetThuc) VALUES (@TenKM, @PhanTramKM, @NgayBatDau, @NgayKetThuc)";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            // Kiểm tra mã khuyến mãi có tồn tại không
+            // Cập nhật nếu MaKM là số
+            if (int.TryParse(tenKM, out int maKM))
             {
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@TenKM", tenKM);
-                cmd.Parameters.AddWithValue("@PhanTramKM", phanTramKM);
-                cmd.Parameters.AddWithValue("@NgayBatDau", ngayBatDau);
-                cmd.Parameters.AddWithValue("@NgayKetThuc", ngayKetThuc);
-
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Khuyến mãi đã được thêm.");
-                LoadKhuyenMai();  // Load lại dữ liệu sau khi thêm
-            }
-        }
-        private void UpdateKhuyenMai(int maKM)
-        {
-            string tenKM = txt_makm.Text;
-            decimal phanTramKM = decimal.Parse(txt_ptkm.Text);
-            DateTime ngayBatDau = dtp_nbd.Value;
-            DateTime ngayKetThuc = dtb_nkt.Value;
-
-            string query = "UPDATE KhuyenMai SET TenKM = @TenKM, PhanTramKM = @PhanTramKM, NgayBatDau = @NgayBatDau, NgayKetThuc = @NgayKetThuc WHERE MaKM = @MaKM";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@TenKM", tenKM);
-                cmd.Parameters.AddWithValue("@PhanTramKM", phanTramKM);
-                cmd.Parameters.AddWithValue("@NgayBatDau", ngayBatDau);
-                cmd.Parameters.AddWithValue("@NgayKetThuc", ngayKetThuc);
-                cmd.Parameters.AddWithValue("@MaKM", maKM);
-
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Khuyến mãi đã được cập nhật.");
-                LoadKhuyenMai();  // Load lại dữ liệu sau khi sửa
-            }
-        }
-
-        private void btn_xoa_Click(object sender, EventArgs e)
-        {
-            // Xóa dòng đã chọn trong DataGridView
-            if (dgvkm.SelectedRows.Count > 0)
-            {
-                var result = MessageBox.Show("Bạn có chắc chắn muốn xóa mục này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                if (dbContext.KhuyenMai.Any(existingKM => existingKM.MaKM == maKM))  // Kiểm tra MaKM trong cơ sở dữ liệu
                 {
-                    dgvkm.Rows.RemoveAt(dgvkm.SelectedRows[0].Index);
+                    MessageBox.Show("Mã khuyến mãi đã tồn tại.");
+                    return;
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một mục để xóa.");
+                MessageBox.Show("Mã khuyến mãi không hợp lệ.");
+                return;
             }
+
+            // Tạo đối tượng KhuyenMai mới
+            KhuyenMai km = new KhuyenMai
+            {
+                TenKM = txt_tennc.Text,
+                PhanTramKM = phanTramKM,
+                NgayBatDau = ngayBatDau,
+                NgayKetThuc = ngayKetThuc
+            };
+
+            dbContext.KhuyenMai.Add(km);
+            dbContext.SaveChanges(); // Lưu vào cơ sở dữ liệu
+
+            MessageBox.Show("Khuyến mãi đã được thêm.");
+            LoadKhuyenMai();  // Load lại dữ liệu sau khi thêm
         }
 
-        private void btn_sua_Click(object sender, EventArgs e)
+
+        private void btn_xoa_Click(object sender, EventArgs e)
         {
-            // Sửa mục đã chọn trong DataGridView
+                if (dgvkm.SelectedRows.Count > 0)
+                {
+                    var result = MessageBox.Show("Bạn có chắc chắn muốn xóa mục này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        dgvkm.Rows.RemoveAt(dgvkm.SelectedRows[0].Index);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một mục để xóa.");
+                }
+            }
+
+        private void btn_sua_Click_1(object sender, EventArgs e)
+        {
             if (dgvkm.SelectedRows.Count > 0)
             {
                 DataGridViewRow row = dgvkm.SelectedRows[0];
 
-                string tenNguoiChoi = txt_tennc.Text;
-                string maNguoiChoi = txt_mnc.Text;
-                string tenKhuyenMai = txt_makm.Text;
-                string ngayBatDau = dtp_nbd.Text;
-                string ngayKetThuc = dtb_nkt.Text;
-
-                if (string.IsNullOrEmpty(tenNguoiChoi) || string.IsNullOrEmpty(maNguoiChoi) ||
-                    string.IsNullOrEmpty(tenKhuyenMai) || string.IsNullOrEmpty(ngayBatDau) || string.IsNullOrEmpty(ngayKetThuc))
-                {
-                    MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
-                    return;
-                }
-
-                if (!IsValidDate(ngayBatDau) || !IsValidDate(ngayKetThuc))
-                {
-                    MessageBox.Show("Ngày bắt đầu hoặc ngày kết thúc không hợp lệ.");
-                    return;
-                }
-
                 // Cập nhật thông tin dòng đã chọn
-                row.Cells[0].Value = tenNguoiChoi;
-                row.Cells[1].Value = maNguoiChoi;
-                row.Cells[2].Value = tenKhuyenMai;
-                row.Cells[3].Value = ngayBatDau;
-                row.Cells[4].Value = ngayKetThuc;
+                row.Cells[0].Value = txt_tennc.Text;
+                row.Cells[1].Value = txt_mnc.Text;
+                row.Cells[2].Value = txt_makm.Text;
+                row.Cells[3].Value = dtp_nbd.Text;
+                row.Cells[4].Value = dtb_nkt.Text;
+
+                // Cập nhật cơ sở dữ liệu
+                int maKM = 0;
+
+                // Kiểm tra xem txt_makm.Text có thể chuyển sang int không
+                if (int.TryParse(txt_makm.Text, out maKM))
+                {
+                    var kmToUpdate = dbContext.KhuyenMai.FirstOrDefault(km => km.MaKM == maKM); // Sửa lỗi so sánh int và string
+                    if (kmToUpdate != null)
+                    {
+                        kmToUpdate.TenKM = txt_tennc.Text;
+                        kmToUpdate.PhanTramKM = decimal.Parse(txt_ptkm.Text);
+                        kmToUpdate.NgayBatDau = dtp_nbd.Value;
+                        kmToUpdate.NgayKetThuc = dtb_nkt.Value;
+                        dbContext.SaveChanges();
+
+                        MessageBox.Show("Thông tin khuyến mãi đã được sửa.");
+                        LoadKhuyenMai();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Mã khuyến mãi không tồn tại.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Mã khuyến mãi không hợp lệ.");
+                }
             }
             else
             {
@@ -199,79 +245,44 @@ namespace QLcasino
             }
         }
 
-
         private void btn_thoat_Click(object sender, EventArgs e)
+
         {
-            // Ẩn formKhuyenMai hiện tại
-            this.Hide();
+            this.Hide();  // Ẩn form hiện tại (formKM)
 
-            // Kiểm tra xem formTQL đã được khởi tạo chưa
-            if (formTQLInstance == null)
-            {
-                formTQLInstance = new formTQL(); // Khởi tạo instance nếu chưa có
-            }
+            // Tạo instance của formDK
+            formDK formDKInstance = new formDK();
 
-            // Hiển thị formTQL
-            formTQLInstance.Show();
+            // Gán giá trị cho mã người chơi và mã khuyến mãi
+            formDKInstance.MaNguoiChoi = txt_mnc.Text;  // Giả sử mã người chơi từ txt_mnc
+            formDKInstance.MaKhuyenMai = txt_makm.Text; // Giả sử mã khuyến mãi từ txt_makm
+
+            // Hiển thị formDK
+            formDKInstance.Show();  // Mở form Đăng Ký
+
+            // Bạn có thể đóng formKM nếu không cần thiết nữa
+            // this.Close(); 
         }
-        private void AddformKhuyenMai()
-        {
-            string tenKM = txt_makm.Text;
-            decimal phanTramKM = decimal.Parse(txt_ptkm.Text);
-
-            // Lấy giá trị từ các TextBox và kiểm tra nếu là ngày hợp lệ
-            string ngayBatDauStr = dtp_nbd.Text;
-            string ngayKetThucStr = dtb_nkt. Text;
-
-            DateTime ngayBatDau;
-            DateTime ngayKetThuc;
-
-            if (!DateTime.TryParse(ngayBatDauStr, out ngayBatDau))
-            {
-                MessageBox.Show("Ngày bắt đầu không hợp lệ.");
-                return;
-            }
-
-            if (!DateTime.TryParse(ngayKetThucStr, out ngayKetThuc))
-            {
-                MessageBox.Show("Ngày kết thúc không hợp lệ.");
-                return;
-            }
-
-            string query = "INSERT INTO KhuyenMai (TenKM, PhanTramKM, NgayBatDau, NgayKetThuc) VALUES (@TenKM, @PhanTramKM, @NgayBatDau, @NgayKetThuc)";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@TenKM", tenKM);
-                cmd.Parameters.AddWithValue("@PhanTramKM", phanTramKM);
-                cmd.Parameters.AddWithValue("@NgayBatDau", ngayBatDau);
-                cmd.Parameters.AddWithValue("@NgayKetThuc", ngayKetThuc);
-
-                try
-                {
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Khuyến mãi đã được thêm.");
-                    LoadKhuyenMai();  // Load lại dữ liệu sau khi thêm
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi khi thêm khuyến mãi: " + ex.Message);
-                }
-            }
-        }
-
 
         private void dgvkm_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void btn_them_Click_1(object sender, EventArgs e)
+        private void formKhuyenMai_Load(object sender, EventArgs e)
+        
         {
-
+            if (dgvkm.SelectedRows.Count > 0)
+            {
+                var row = dgvkm.SelectedRows[0];
+                txt_tennc.Text = row.Cells[0].Value.ToString();
+                txt_mnc.Text = row.Cells[1].Value.ToString();
+                // Tiếp tục cho các trường khác...
+            }
         }
-    }
 
+    }
 }
+    
+
+

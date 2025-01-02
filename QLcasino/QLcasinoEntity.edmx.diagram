@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d16fed5eb1944ed280c86bf9ad2ef6bd" Name="Diagram1" ZoomLevel="65">
+      <Diagram DiagramId="5e2fed367f104582aadacbe0f4118972" Name="Diagram1">
         <EntityTypeShape EntityType="QLcasinoModel.BanChoi" Width="1.5" PointX="7.5" PointY="16.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QLcasinoModel.BanChoiNguoi" Width="1.5" PointX="10.75" PointY="12.125" IsExpanded="true" />
         <EntityTypeShape EntityType="QLcasinoModel.DanhThu" Width="1.5" PointX="10.5" PointY="15.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QLcasinoModel.DichVu" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLcasinoModel.Hoadon" Width="1.5" PointX="5.625" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLcasinoModel.Hoadon" Width="1.5" PointX="5.25" PointY="13.375" IsExpanded="true" />
         <EntityTypeShape EntityType="QLcasinoModel.Khachhang" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QLcasinoModel.KhieuNai" Width="1.5" PointX="8.25" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QLcasinoModel.KhuVuc" Width="1.5" PointX="5.25" PointY="19.375" IsExpanded="true" />
@@ -17,17 +17,16 @@
         <EntityTypeShape EntityType="QLcasinoModel.LichLamViec" Width="1.5" PointX="7.5" PointY="20.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QLcasinoModel.LichSuChoi" Width="1.5" PointX="12.75" PointY="15.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QLcasinoModel.NhanVien" Width="1.5" PointX="3" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLcasinoModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QLcasinoModel.TaiKhoanNV" Width="1.5" PointX="5.25" PointY="23.125" IsExpanded="true" />
         <EntityTypeShape EntityType="QLcasinoModel.ThongKeDoanhThu" Width="1.5" PointX="10.5" PointY="19.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QLcasinoModel.TrangThai" Width="1.5" PointX="0.75" PointY="13.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QLcasinoModel.TroChoi" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
-        <AssociationConnector Association="QLcasinoModel.FK__BanChoi__MaKV__571DF1D5" ManuallyRouted="false" />
-        <AssociationConnector Association="QLcasinoModel.FK__BanChoi__MaTC__5629CD9C" ManuallyRouted="false" />
-        <AssociationConnector Association="QLcasinoModel.FK__BanChoiNgu__MaBC__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="QLcasinoModel.FK__BanChoi__MaKV__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="QLcasinoModel.FK__BanChoi__MaTC__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="QLcasinoModel.FK__BanChoiNgu__MaBC__7E37BEF6" ManuallyRouted="false" />
         <AssociationConnector Association="QLcasinoModel.FK_BanChoi_TrangThai" ManuallyRouted="false" />
         <AssociationConnector Association="QLcasinoModel.FK_LichSuChoi_BanChoi" ManuallyRouted="false" />
-        <AssociationConnector Association="QLcasinoModel.FK__BanChoiNg__MaKha__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="QLcasinoModel.FK__BanChoiNg__MaKha__7F2BE32F" ManuallyRouted="false" />
         <AssociationConnector Association="QLcasinoModel.FK_BanChoiNguoi_TrangThai" ManuallyRouted="false" />
         <AssociationConnector Association="QLcasinoModel.FK_DanhThu_Hoadon" ManuallyRouted="false" />
         <AssociationConnector Association="QLcasinoModel.FK_DanhThu_NhanVien" ManuallyRouted="false" />
@@ -40,15 +39,15 @@
         <AssociationConnector Association="QLcasinoModel.FK_KhieuNai_Khachhang" ManuallyRouted="false" />
         <AssociationConnector Association="QLcasinoModel.FK_LichSuChoi_Khachhang" ManuallyRouted="false" />
         <AssociationConnector Association="QLcasinoModel.FK_KhieuNai_TrangThai" ManuallyRouted="false" />
-        <AssociationConnector Association="QLcasinoModel.FK__LichLamVi__MaKhu__5165187F" ManuallyRouted="false" />
-        <AssociationConnector Association="QLcasinoModel.FK__ThongKeDo__MaKhu__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="QLcasinoModel.FK__LichLamVi__MaKhu__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="QLcasinoModel.FK__ThongKeDo__MaKhu__09A971A2" ManuallyRouted="false" />
         <AssociationConnector Association="QLcasinoModel.FK_KhuVuc_NhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="QLcasinoModel.FK__LichLamVie__MaNV__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="QLcasinoModel.FK__LichLamVie__MaNV__6754599E" ManuallyRouted="false" />
         <AssociationConnector Association="QLcasinoModel.FK_LichSuChoi_TrangThai" ManuallyRouted="false" />
         <AssociationConnector Association="QLcasinoModel.FK_LichSuChoi_TroChoi" ManuallyRouted="false" />
         <AssociationConnector Association="QLcasinoModel.FK_NhanVien_TrangThai" ManuallyRouted="false" />
         <AssociationConnector Association="QLcasinoModel.FK_TaiKhoanNV_NhanVien" ManuallyRouted="false" />
-        <AssociationConnector Association="QLcasinoModel.FK__ThongKeDo__MaTro__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="QLcasinoModel.FK__ThongKeDo__MaTro__0A9D95DB" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
