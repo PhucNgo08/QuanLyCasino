@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="QLcasinoModelStoreContainer" CdmEntityContainer="QLcasinoEntities">
+  <EntityContainerMapping StorageEntityContainer="QLcasinoModelStoreContainer" CdmEntityContainer="QLcasinoEntiy">
     <EntitySetMapping Name="BanChoi">
       <EntityTypeMapping TypeName="QLcasinoModel.BanChoi">
         <MappingFragment StoreEntitySet="BanChoi">
@@ -9,7 +9,7 @@
           <ScalarProperty Name="MaKV" ColumnName="MaKV" />
           <ScalarProperty Name="LoaiChoi" ColumnName="LoaiChoi" />
           <ScalarProperty Name="SoNguoi" ColumnName="SoNguoi" />
-          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+          <ScalarProperty Name="MaTrangThai" ColumnName="MaTrangThai" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -17,9 +17,9 @@
       <EntityTypeMapping TypeName="QLcasinoModel.BanChoiNguoi">
         <MappingFragment StoreEntitySet="BanChoiNguoi">
           <ScalarProperty Name="MaBC" ColumnName="MaBC" />
+          <ScalarProperty Name="MaTrangThai" ColumnName="MaTrangThai" />
           <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
           <ScalarProperty Name="ThoiGianVao" ColumnName="ThoiGianVao" />
-          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -41,6 +41,7 @@
           <ScalarProperty Name="TenDV" ColumnName="TenDV" />
           <ScalarProperty Name="LoaiDV" ColumnName="LoaiDV" />
           <ScalarProperty Name="GiaDV" ColumnName="GiaDV" />
+          <ScalarProperty Name="MaTrangThai" ColumnName="MaTrangThai" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -48,13 +49,13 @@
       <EntityTypeMapping TypeName="QLcasinoModel.Hoadon">
         <MappingFragment StoreEntitySet="Hoadon">
           <ScalarProperty Name="MaHoadon" ColumnName="MaHoadon" />
+          <ScalarProperty Name="MaTrangThai" ColumnName="MaTrangThai" />
           <ScalarProperty Name="LoaiGiaoDich" ColumnName="LoaiGiaoDich" />
           <ScalarProperty Name="NgayGiaoDich" ColumnName="NgayGiaoDich" />
           <ScalarProperty Name="SoTien" ColumnName="SoTien" />
           <ScalarProperty Name="MaKhachhang" ColumnName="MaKhachhang" />
           <ScalarProperty Name="MaDV" ColumnName="MaDV" />
           <ScalarProperty Name="MaKM" ColumnName="MaKM" />
-          <ScalarProperty Name="TrangThaiHoadon" ColumnName="TrangThaiHoadon" />
           <ScalarProperty Name="NgayThanhToan" ColumnName="NgayThanhToan" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -63,12 +64,12 @@
       <EntityTypeMapping TypeName="QLcasinoModel.Khachhang">
         <MappingFragment StoreEntitySet="Khachhang">
           <ScalarProperty Name="MaKhachhang" ColumnName="MaKhachhang" />
+          <ScalarProperty Name="MaTrangThai" ColumnName="MaTrangThai" />
           <ScalarProperty Name="HoTen" ColumnName="HoTen" />
           <ScalarProperty Name="SoCMND_CCCD" ColumnName="SoCMND_CCCD" />
           <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="QuocTich" ColumnName="QuocTich" />
-          <ScalarProperty Name="TrangThaiThanhVien" ColumnName="TrangThaiThanhVien" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
         </MappingFragment>
@@ -78,9 +79,9 @@
       <EntityTypeMapping TypeName="QLcasinoModel.KhieuNai">
         <MappingFragment StoreEntitySet="KhieuNai">
           <ScalarProperty Name="MaKN" ColumnName="MaKN" />
+          <ScalarProperty Name="MaTrangThai" ColumnName="MaTrangThai" />
           <ScalarProperty Name="LyDo" ColumnName="LyDo" />
           <ScalarProperty Name="MaKhachhang" ColumnName="MaKhachhang" />
-          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
           <ScalarProperty Name="NgayNhan" ColumnName="NgayNhan" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -124,12 +125,12 @@
       <EntityTypeMapping TypeName="QLcasinoModel.LichSuChoi">
         <MappingFragment StoreEntitySet="LichSuChoi">
           <ScalarProperty Name="MaLC" ColumnName="MaLC" />
+          <ScalarProperty Name="MaTrangThai" ColumnName="MaTrangThai" />
           <ScalarProperty Name="TGChoi" ColumnName="TGChoi" />
           <ScalarProperty Name="SoTienCuoc" ColumnName="SoTienCuoc" />
           <ScalarProperty Name="MaKhachhang" ColumnName="MaKhachhang" />
           <ScalarProperty Name="MaTC" ColumnName="MaTC" />
           <ScalarProperty Name="MaBC" ColumnName="MaBC" />
-          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
           <ScalarProperty Name="ThoiGianBatDau" ColumnName="ThoiGianBatDau" />
           <ScalarProperty Name="ThoiGianKetThuc" ColumnName="ThoiGianKetThuc" />
         </MappingFragment>
@@ -144,7 +145,7 @@
           <ScalarProperty Name="NgayBDLV" ColumnName="NgayBDLV" />
           <ScalarProperty Name="CaLV" ColumnName="CaLV" />
           <ScalarProperty Name="Luong" ColumnName="Luong" />
-          <ScalarProperty Name="TrangThaiTaiKhoan" ColumnName="TrangThaiTaiKhoan" />
+          <ScalarProperty Name="MaTrangThai" ColumnName="MaTrangThai" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -170,6 +171,14 @@
           <ScalarProperty Name="TongDoanhThu" ColumnName="TongDoanhThu" />
           <ScalarProperty Name="Thang" ColumnName="Thang" />
           <ScalarProperty Name="Nam" ColumnName="Nam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrangThai">
+      <EntityTypeMapping TypeName="QLcasinoModel.TrangThai">
+        <MappingFragment StoreEntitySet="TrangThai">
+          <ScalarProperty Name="MaTrangThai" ColumnName="MaTrangThai" />
+          <ScalarProperty Name="TenTrangThai" ColumnName="TenTrangThai" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

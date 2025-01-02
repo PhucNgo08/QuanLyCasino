@@ -24,7 +24,7 @@ namespace QLcasino
             string tenTaiKhoan = txt_TTK.Text.Trim();
             string matKhau = txt_MK.Text.Trim();
 
-            using (var db = new QLcasinoEntities2())
+            using (var db = new QLcasinoEntiy())
             {
                 var taiKhoanTonTai = db.TaiKhoanNV
                     .FirstOrDefault(tk => tk.TenTaiKhoan == tenTaiKhoan);

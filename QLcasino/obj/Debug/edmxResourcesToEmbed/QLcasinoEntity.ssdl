@@ -4,12 +4,12 @@
     <Key>
       <PropertyRef Name="MaBC" />
     </Key>
-    <Property Name="MaBC" Type="int" Nullable="false" />
+    <Property Name="MaBC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MaTC" Type="int" />
     <Property Name="MaKV" Type="int" />
     <Property Name="LoaiChoi" Type="nvarchar" MaxLength="50" />
     <Property Name="SoNguoi" Type="int" />
-    <Property Name="TrangThai" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaTrangThai" Type="int" />
   </EntityType>
   <EntityType Name="BanChoiNguoi">
     <Key>
@@ -17,9 +17,9 @@
       <PropertyRef Name="MaKhachHang" />
     </Key>
     <Property Name="MaBC" Type="int" Nullable="false" />
+    <Property Name="MaTrangThai" Type="int" />
     <Property Name="MaKhachHang" Type="int" Nullable="false" />
     <Property Name="ThoiGianVao" Type="datetime" />
-    <Property Name="TrangThai" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="DanhThu">
     <Key>
@@ -39,19 +39,20 @@
     <Property Name="TenDV" Type="nvarchar" MaxLength="50" />
     <Property Name="LoaiDV" Type="nvarchar" MaxLength="50" />
     <Property Name="GiaDV" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="MaTrangThai" Type="int" />
   </EntityType>
   <EntityType Name="Hoadon">
     <Key>
       <PropertyRef Name="MaHoadon" />
     </Key>
     <Property Name="MaHoadon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaTrangThai" Type="int" />
     <Property Name="LoaiGiaoDich" Type="nvarchar" MaxLength="50" />
     <Property Name="NgayGiaoDich" Type="date" />
     <Property Name="SoTien" Type="decimal" Precision="18" Scale="2" />
     <Property Name="MaKhachhang" Type="int" />
     <Property Name="MaDV" Type="int" />
     <Property Name="MaKM" Type="int" />
-    <Property Name="TrangThaiHoadon" Type="nvarchar" MaxLength="50" />
     <Property Name="NgayThanhToan" Type="date" />
   </EntityType>
   <EntityType Name="Khachhang">
@@ -59,12 +60,12 @@
       <PropertyRef Name="MaKhachhang" />
     </Key>
     <Property Name="MaKhachhang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="HoTen" Type="nvarchar" MaxLength="100" />
-    <Property Name="SoCMND_CCCD" Type="nvarchar" MaxLength="20" />
+    <Property Name="MaTrangThai" Type="int" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SoCMND_CCCD" Type="char" MaxLength="12" />
     <Property Name="NgaySinh" Type="date" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
     <Property Name="QuocTich" Type="nvarchar" MaxLength="50" />
-    <Property Name="TrangThaiThanhVien" Type="nvarchar" MaxLength="50" />
     <Property Name="Email" Type="nvarchar" MaxLength="100" />
     <Property Name="SoDienThoai" Type="nvarchar" MaxLength="20" />
   </EntityType>
@@ -73,9 +74,9 @@
       <PropertyRef Name="MaKN" />
     </Key>
     <Property Name="MaKN" Type="int" Nullable="false" />
+    <Property Name="MaTrangThai" Type="int" />
     <Property Name="LyDo" Type="nvarchar" MaxLength="255" />
     <Property Name="MaKhachhang" Type="int" />
-    <Property Name="TrangThai" Type="nvarchar" MaxLength="50" />
     <Property Name="NgayNhan" Type="date" />
   </EntityType>
   <EntityType Name="KhuVuc">
@@ -95,7 +96,7 @@
     </Key>
     <Property Name="MaKM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenKM" Type="nvarchar" MaxLength="50" />
-    <Property Name="PhanTramKM" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="PhanTramKM" Type="decimal" Precision="4" Scale="2" />
     <Property Name="NgayBatDau" Type="date" />
     <Property Name="NgayKetThuc" Type="date" />
     <Property Name="Mota" Type="nvarchar" MaxLength="255" />
@@ -114,13 +115,13 @@
     <Key>
       <PropertyRef Name="MaLC" />
     </Key>
-    <Property Name="MaLC" Type="int" Nullable="false" />
+    <Property Name="MaLC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaTrangThai" Type="int" />
     <Property Name="TGChoi" Type="time" Precision="7" />
     <Property Name="SoTienCuoc" Type="decimal" Precision="18" Scale="2" />
     <Property Name="MaKhachhang" Type="int" />
     <Property Name="MaTC" Type="int" />
     <Property Name="MaBC" Type="int" />
-    <Property Name="TrangThai" Type="nvarchar" MaxLength="50" />
     <Property Name="ThoiGianBatDau" Type="datetime" />
     <Property Name="ThoiGianKetThuc" Type="datetime" />
   </EntityType>
@@ -129,12 +130,12 @@
       <PropertyRef Name="MaNV" />
     </Key>
     <Property Name="MaNV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="HoTenNV" Type="nvarchar" MaxLength="100" />
+    <Property Name="HoTenNV" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="ViTriCV" Type="nvarchar" MaxLength="50" />
     <Property Name="NgayBDLV" Type="date" />
     <Property Name="CaLV" Type="nvarchar" MaxLength="50" />
     <Property Name="Luong" Type="decimal" Precision="18" Scale="2" />
-    <Property Name="TrangThaiTaiKhoan" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaTrangThai" Type="int" />
   </EntityType>
   <EntityType Name="TaiKhoanNV">
     <Key>
@@ -143,7 +144,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="HoTen" Type="nvarchar" MaxLength="100" />
     <Property Name="TenTaiKhoan" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="MatKhau" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="255" Nullable="false" />
     <Property Name="LoaiTaiKhoan" Type="nvarchar" MaxLength="20" />
     <Property Name="MaNV" Type="int" />
   </EntityType>
@@ -159,16 +160,23 @@
     <Property Name="Thang" Type="int" />
     <Property Name="Nam" Type="int" />
   </EntityType>
+  <EntityType Name="TrangThai">
+    <Key>
+      <PropertyRef Name="MaTrangThai" />
+    </Key>
+    <Property Name="MaTrangThai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenTrangThai" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityType Name="TroChoi">
     <Key>
       <PropertyRef Name="MaTC" />
     </Key>
     <Property Name="MaTC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TenTC" Type="nvarchar" MaxLength="50" />
+    <Property Name="TenTC" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="LoaiTC" Type="nvarchar" MaxLength="50" />
     <Property Name="LuatChoi" Type="nvarchar" MaxLength="255" />
   </EntityType>
-  <Association Name="FK__BanChoi__MaKV__5FB337D6">
+  <Association Name="FK__BanChoi__MaKV__6E01572D">
     <End Role="KhuVuc" Type="Self.KhuVuc" Multiplicity="0..1" />
     <End Role="BanChoi" Type="Self.BanChoi" Multiplicity="*" />
     <ReferentialConstraint>
@@ -180,7 +188,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BanChoi__TrangTh__5EBF139D">
+  <Association Name="FK__BanChoi__MaTC__6D0D32F4">
     <End Role="TroChoi" Type="Self.TroChoi" Multiplicity="0..1" />
     <End Role="BanChoi" Type="Self.BanChoi" Multiplicity="*" />
     <ReferentialConstraint>
@@ -192,7 +200,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BanChoiNg__MaKha__6B24EA82">
+  <Association Name="FK__BanChoiNg__MaKha__7F2BE32F">
     <End Role="Khachhang" Type="Self.Khachhang" Multiplicity="1" />
     <End Role="BanChoiNguoi" Type="Self.BanChoiNguoi" Multiplicity="*" />
     <ReferentialConstraint>
@@ -204,7 +212,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BanChoiNgu__MaBC__6A30C649">
+  <Association Name="FK__BanChoiNgu__MaBC__7E37BEF6">
     <End Role="BanChoi" Type="Self.BanChoi" Multiplicity="1" />
     <End Role="BanChoiNguoi" Type="Self.BanChoiNguoi" Multiplicity="*" />
     <ReferentialConstraint>
@@ -216,7 +224,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__LichLamVi__MaKhu__59FA5E80">
+  <Association Name="FK__LichLamVi__MaKhu__68487DD7">
     <End Role="KhuVuc" Type="Self.KhuVuc" Multiplicity="0..1" />
     <End Role="LichLamViec" Type="Self.LichLamViec" Multiplicity="*" />
     <ReferentialConstraint>
@@ -228,7 +236,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__LichLamVie__MaNV__59063A47">
+  <Association Name="FK__LichLamVie__MaNV__6754599E">
     <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
     <End Role="LichLamViec" Type="Self.LichLamViec" Multiplicity="*" />
     <ReferentialConstraint>
@@ -240,7 +248,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ThongKeDo__MaKhu__74AE54BC">
+  <Association Name="FK__ThongKeDo__MaKhu__09A971A2">
     <End Role="KhuVuc" Type="Self.KhuVuc" Multiplicity="1" />
     <End Role="ThongKeDoanhThu" Type="Self.ThongKeDoanhThu" Multiplicity="*" />
     <ReferentialConstraint>
@@ -252,7 +260,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ThongKeDo__MaTro__75A278F5">
+  <Association Name="FK__ThongKeDo__MaTro__0A9D95DB">
     <End Role="TroChoi" Type="Self.TroChoi" Multiplicity="0..1" />
     <End Role="ThongKeDoanhThu" Type="Self.ThongKeDoanhThu" Multiplicity="*" />
     <ReferentialConstraint>
@@ -261,6 +269,30 @@
       </Principal>
       <Dependent Role="ThongKeDoanhThu">
         <PropertyRef Name="MaTroChoi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BanChoi_TrangThai">
+    <End Role="TrangThai" Type="Self.TrangThai" Multiplicity="0..1" />
+    <End Role="BanChoi" Type="Self.BanChoi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TrangThai">
+        <PropertyRef Name="MaTrangThai" />
+      </Principal>
+      <Dependent Role="BanChoi">
+        <PropertyRef Name="MaTrangThai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BanChoiNguoi_TrangThai">
+    <End Role="TrangThai" Type="Self.TrangThai" Multiplicity="0..1" />
+    <End Role="BanChoiNguoi" Type="Self.BanChoiNguoi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TrangThai">
+        <PropertyRef Name="MaTrangThai" />
+      </Principal>
+      <Dependent Role="BanChoiNguoi">
+        <PropertyRef Name="MaTrangThai" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -285,6 +317,18 @@
       </Principal>
       <Dependent Role="DanhThu">
         <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DichVu_TrangThai">
+    <End Role="TrangThai" Type="Self.TrangThai" Multiplicity="0..1" />
+    <End Role="DichVu" Type="Self.DichVu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TrangThai">
+        <PropertyRef Name="MaTrangThai" />
+      </Principal>
+      <Dependent Role="DichVu">
+        <PropertyRef Name="MaTrangThai" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -324,6 +368,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Hoadon_TrangThai">
+    <End Role="TrangThai" Type="Self.TrangThai" Multiplicity="0..1" />
+    <End Role="Hoadon" Type="Self.Hoadon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TrangThai">
+        <PropertyRef Name="MaTrangThai" />
+      </Principal>
+      <Dependent Role="Hoadon">
+        <PropertyRef Name="MaTrangThai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Khachhang_TrangThai">
+    <End Role="TrangThai" Type="Self.TrangThai" Multiplicity="0..1" />
+    <End Role="Khachhang" Type="Self.Khachhang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TrangThai">
+        <PropertyRef Name="MaTrangThai" />
+      </Principal>
+      <Dependent Role="Khachhang">
+        <PropertyRef Name="MaTrangThai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_KhieuNai_Khachhang">
     <End Role="Khachhang" Type="Self.Khachhang" Multiplicity="0..1" />
     <End Role="KhieuNai" Type="Self.KhieuNai" Multiplicity="*" />
@@ -333,6 +401,18 @@
       </Principal>
       <Dependent Role="KhieuNai">
         <PropertyRef Name="MaKhachhang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KhieuNai_TrangThai">
+    <End Role="TrangThai" Type="Self.TrangThai" Multiplicity="0..1" />
+    <End Role="KhieuNai" Type="Self.KhieuNai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TrangThai">
+        <PropertyRef Name="MaTrangThai" />
+      </Principal>
+      <Dependent Role="KhieuNai">
+        <PropertyRef Name="MaTrangThai" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -372,6 +452,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_LichSuChoi_TrangThai">
+    <End Role="TrangThai" Type="Self.TrangThai" Multiplicity="0..1" />
+    <End Role="LichSuChoi" Type="Self.LichSuChoi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TrangThai">
+        <PropertyRef Name="MaTrangThai" />
+      </Principal>
+      <Dependent Role="LichSuChoi">
+        <PropertyRef Name="MaTrangThai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_LichSuChoi_TroChoi">
     <End Role="TroChoi" Type="Self.TroChoi" Multiplicity="0..1" />
     <End Role="LichSuChoi" Type="Self.LichSuChoi" Multiplicity="*" />
@@ -381,6 +473,18 @@
       </Principal>
       <Dependent Role="LichSuChoi">
         <PropertyRef Name="MaTC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NhanVien_TrangThai">
+    <End Role="TrangThai" Type="Self.TrangThai" Multiplicity="0..1" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TrangThai">
+        <PropertyRef Name="MaTrangThai" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="MaTrangThai" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -411,38 +515,47 @@
     <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TaiKhoanNV" EntityType="Self.TaiKhoanNV" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ThongKeDoanhThu" EntityType="Self.ThongKeDoanhThu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TrangThai" EntityType="Self.TrangThai" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TroChoi" EntityType="Self.TroChoi" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__BanChoi__MaKV__5FB337D6" Association="Self.FK__BanChoi__MaKV__5FB337D6">
+    <AssociationSet Name="FK__BanChoi__MaKV__6E01572D" Association="Self.FK__BanChoi__MaKV__6E01572D">
       <End Role="KhuVuc" EntitySet="KhuVuc" />
       <End Role="BanChoi" EntitySet="BanChoi" />
     </AssociationSet>
-    <AssociationSet Name="FK__BanChoi__TrangTh__5EBF139D" Association="Self.FK__BanChoi__TrangTh__5EBF139D">
+    <AssociationSet Name="FK__BanChoi__MaTC__6D0D32F4" Association="Self.FK__BanChoi__MaTC__6D0D32F4">
       <End Role="TroChoi" EntitySet="TroChoi" />
       <End Role="BanChoi" EntitySet="BanChoi" />
     </AssociationSet>
-    <AssociationSet Name="FK__BanChoiNg__MaKha__6B24EA82" Association="Self.FK__BanChoiNg__MaKha__6B24EA82">
+    <AssociationSet Name="FK__BanChoiNg__MaKha__7F2BE32F" Association="Self.FK__BanChoiNg__MaKha__7F2BE32F">
       <End Role="Khachhang" EntitySet="Khachhang" />
       <End Role="BanChoiNguoi" EntitySet="BanChoiNguoi" />
     </AssociationSet>
-    <AssociationSet Name="FK__BanChoiNgu__MaBC__6A30C649" Association="Self.FK__BanChoiNgu__MaBC__6A30C649">
+    <AssociationSet Name="FK__BanChoiNgu__MaBC__7E37BEF6" Association="Self.FK__BanChoiNgu__MaBC__7E37BEF6">
       <End Role="BanChoi" EntitySet="BanChoi" />
       <End Role="BanChoiNguoi" EntitySet="BanChoiNguoi" />
     </AssociationSet>
-    <AssociationSet Name="FK__LichLamVi__MaKhu__59FA5E80" Association="Self.FK__LichLamVi__MaKhu__59FA5E80">
+    <AssociationSet Name="FK__LichLamVi__MaKhu__68487DD7" Association="Self.FK__LichLamVi__MaKhu__68487DD7">
       <End Role="KhuVuc" EntitySet="KhuVuc" />
       <End Role="LichLamViec" EntitySet="LichLamViec" />
     </AssociationSet>
-    <AssociationSet Name="FK__LichLamVie__MaNV__59063A47" Association="Self.FK__LichLamVie__MaNV__59063A47">
+    <AssociationSet Name="FK__LichLamVie__MaNV__6754599E" Association="Self.FK__LichLamVie__MaNV__6754599E">
       <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="LichLamViec" EntitySet="LichLamViec" />
     </AssociationSet>
-    <AssociationSet Name="FK__ThongKeDo__MaKhu__74AE54BC" Association="Self.FK__ThongKeDo__MaKhu__74AE54BC">
+    <AssociationSet Name="FK__ThongKeDo__MaKhu__09A971A2" Association="Self.FK__ThongKeDo__MaKhu__09A971A2">
       <End Role="KhuVuc" EntitySet="KhuVuc" />
       <End Role="ThongKeDoanhThu" EntitySet="ThongKeDoanhThu" />
     </AssociationSet>
-    <AssociationSet Name="FK__ThongKeDo__MaTro__75A278F5" Association="Self.FK__ThongKeDo__MaTro__75A278F5">
+    <AssociationSet Name="FK__ThongKeDo__MaTro__0A9D95DB" Association="Self.FK__ThongKeDo__MaTro__0A9D95DB">
       <End Role="TroChoi" EntitySet="TroChoi" />
       <End Role="ThongKeDoanhThu" EntitySet="ThongKeDoanhThu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BanChoi_TrangThai" Association="Self.FK_BanChoi_TrangThai">
+      <End Role="TrangThai" EntitySet="TrangThai" />
+      <End Role="BanChoi" EntitySet="BanChoi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BanChoiNguoi_TrangThai" Association="Self.FK_BanChoiNguoi_TrangThai">
+      <End Role="TrangThai" EntitySet="TrangThai" />
+      <End Role="BanChoiNguoi" EntitySet="BanChoiNguoi" />
     </AssociationSet>
     <AssociationSet Name="FK_DanhThu_Hoadon" Association="Self.FK_DanhThu_Hoadon">
       <End Role="Hoadon" EntitySet="Hoadon" />
@@ -451,6 +564,10 @@
     <AssociationSet Name="FK_DanhThu_NhanVien" Association="Self.FK_DanhThu_NhanVien">
       <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="DanhThu" EntitySet="DanhThu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DichVu_TrangThai" Association="Self.FK_DichVu_TrangThai">
+      <End Role="TrangThai" EntitySet="TrangThai" />
+      <End Role="DichVu" EntitySet="DichVu" />
     </AssociationSet>
     <AssociationSet Name="FK_Hoadon_DichVu" Association="Self.FK_Hoadon_DichVu">
       <End Role="DichVu" EntitySet="DichVu" />
@@ -464,8 +581,20 @@
       <End Role="KhuyenMai" EntitySet="KhuyenMai" />
       <End Role="Hoadon" EntitySet="Hoadon" />
     </AssociationSet>
+    <AssociationSet Name="FK_Hoadon_TrangThai" Association="Self.FK_Hoadon_TrangThai">
+      <End Role="TrangThai" EntitySet="TrangThai" />
+      <End Role="Hoadon" EntitySet="Hoadon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Khachhang_TrangThai" Association="Self.FK_Khachhang_TrangThai">
+      <End Role="TrangThai" EntitySet="TrangThai" />
+      <End Role="Khachhang" EntitySet="Khachhang" />
+    </AssociationSet>
     <AssociationSet Name="FK_KhieuNai_Khachhang" Association="Self.FK_KhieuNai_Khachhang">
       <End Role="Khachhang" EntitySet="Khachhang" />
+      <End Role="KhieuNai" EntitySet="KhieuNai" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KhieuNai_TrangThai" Association="Self.FK_KhieuNai_TrangThai">
+      <End Role="TrangThai" EntitySet="TrangThai" />
       <End Role="KhieuNai" EntitySet="KhieuNai" />
     </AssociationSet>
     <AssociationSet Name="FK_KhuVuc_NhanVien" Association="Self.FK_KhuVuc_NhanVien">
@@ -480,9 +609,17 @@
       <End Role="Khachhang" EntitySet="Khachhang" />
       <End Role="LichSuChoi" EntitySet="LichSuChoi" />
     </AssociationSet>
+    <AssociationSet Name="FK_LichSuChoi_TrangThai" Association="Self.FK_LichSuChoi_TrangThai">
+      <End Role="TrangThai" EntitySet="TrangThai" />
+      <End Role="LichSuChoi" EntitySet="LichSuChoi" />
+    </AssociationSet>
     <AssociationSet Name="FK_LichSuChoi_TroChoi" Association="Self.FK_LichSuChoi_TroChoi">
       <End Role="TroChoi" EntitySet="TroChoi" />
       <End Role="LichSuChoi" EntitySet="LichSuChoi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NhanVien_TrangThai" Association="Self.FK_NhanVien_TrangThai">
+      <End Role="TrangThai" EntitySet="TrangThai" />
+      <End Role="NhanVien" EntitySet="NhanVien" />
     </AssociationSet>
     <AssociationSet Name="FK_TaiKhoanNV_NhanVien" Association="Self.FK_TaiKhoanNV_NhanVien">
       <End Role="NhanVien" EntitySet="NhanVien" />

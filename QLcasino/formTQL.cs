@@ -37,5 +37,36 @@ namespace QLcasino
         {
          
         }
+
+        private void bntKM_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Tạo một instance của formKhuyenMai
+                formKhuyenMai khuyenMaiForm = new formKhuyenMai();
+
+                // Hiển thị form theo cách modal (chặn các tương tác khác)
+                khuyenMaiForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi mở form Khuyến Mãi: {ex.Message}", "Lỗi");
+            }
+
+
+        }
+        private formTQL formTQLInstance = null;
+
+        // Phương thức kiểm tra và tạo instance nếu cần
+        private void ShowFormTQL()
+        {
+            if (formTQLInstance == null || formTQLInstance.IsDisposed)
+            {
+                formTQLInstance = new formTQL(); // Tạo form nếu chưa tồn tại hoặc đã bị đóng
+            }
+            formTQLInstance.Show(); // Hiển thị form
+            formTQLInstance.BringToFront(); // Đưa form lên trước nếu đã tồn tại
+        }
+
     }
 }
